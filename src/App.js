@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
+
+import Card from './components/Card'
 
 class App extends Component {
   render() {
@@ -20,9 +22,10 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <Card />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
