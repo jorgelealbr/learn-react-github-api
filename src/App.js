@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Card from './components/Card'
+import CardList from './components/CardList'
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Card />
+        <CardList />
       </div>
     )
   }
