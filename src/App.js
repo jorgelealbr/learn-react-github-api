@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import AppLayout from './components/AppLayout'
 import CardList from './components/CardList'
 
 class App extends Component {
@@ -18,7 +19,9 @@ class App extends Component {
 
     return (
       <div>
-        <CardList cards={data} />
+        <AppLayout>
+          <CardList cards={data} />
+        </AppLayout>
       </div>
     )
   }
