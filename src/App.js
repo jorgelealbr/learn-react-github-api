@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom'
 import AppLayout from './components/AppLayout'
 import CardList from './components/CardList'
 
@@ -18,10 +19,19 @@ class App extends Component {
     ]
 
     return (
+      //<AppLayout>
+      //  <CardList cards={data} />
+      // </AppLayout>
       <div>
-        <AppLayout>
-          <CardList cards={data} />
-        </AppLayout>
+        <Switch>
+          <AppLayout>
+            <Route
+              exact
+              path="/"
+              render={props => <CardList {...props} cards={data} />}
+            />
+          </AppLayout>
+        </Switch>
       </div>
     )
   }

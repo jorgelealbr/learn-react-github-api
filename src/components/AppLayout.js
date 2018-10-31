@@ -3,12 +3,10 @@ import PropTypes from 'prop-types'
 import { Layout } from 'antd'
 import NavBar from './NavBar'
 
-//import './app-layout.css'
-
 const { Header, Footer, Content } = Layout
 
 const AppLayout = props => (
-  <Layout>
+  <Layout className="layout">
     <Header>
       <NavBar />
     </Header>
