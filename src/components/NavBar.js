@@ -13,8 +13,10 @@ class NavBar extends Component {
           mode="horizontal"
         >
           <Menu.Item key="user-add">
-            <Icon type="user-add" />
-            Add new card
+            <Link to="/cards/new">
+              <Icon type="user-add" />
+              Add new card
+            </Link>
           </Menu.Item>
         </Menu>
       </div>
