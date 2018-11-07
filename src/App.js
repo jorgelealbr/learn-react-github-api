@@ -5,8 +5,8 @@ import CardList from './components/CardList'
 import Form from './components/Form'
 
 class App extends Component {
-  render() {
-    let data = [
+  state = {
+    data: [
       {
         name: 'Jorge Leal',
         company: 'Thoughtworks BR',
@@ -18,7 +18,13 @@ class App extends Component {
         avatar_url: 'https://avatars1.githubusercontent.com/u/7149450?v=4'
       }
     ]
+  }
 
+  addNewCard = cardInfo => {
+    this.setState(prevState => ({ data: prevState.data.concat(cardInfo) }))
+  }
+
+  render() {
     return (
       <div>
         <Switch>
@@ -26,9 +32,12 @@ class App extends Component {
             <Route
               exact
               path="/"
-              render={props => <CardList {...props} cards={data} />}
+              render={props => <CardList {...props} cards={this.state.data} />}
             />
-            <Route path="/cards/new" component={Form} />
+            <Route
+              path="/cards/new"
+              render={props => <Form {...props} onSubmit={this.addNewCard} />}
+            />
           </AppLayout>
         </Switch>
       </div>
